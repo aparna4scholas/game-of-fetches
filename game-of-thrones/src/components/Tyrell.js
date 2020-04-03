@@ -13,12 +13,12 @@ import axios from 'axios'
 
   componentDidMount() {
     
-    axios.get("")
+    axios.get("http://anapioficeandfire.com/api/characters/16")
     .then(res => {
-      const recipes = res.data.results;
-      console.log("recipes ---->", recipes)
+      const Tyrell = res.data;
+      console.log("data ---->", Tyrell)
       
-      this.setState({data: recipes})
+      this.setState({data: Tyrell})
 
     })
     .catch(error => {
@@ -31,11 +31,13 @@ import axios from 'axios'
   render() {
     return (
       <div>
-        <h1> Spoonacular API </h1>
+        <h1> Where was Margaery Tyrell born? </h1>
         <ul>
-          {this.state.data.map((recipe, id) => <li key={id}> {recipe.title} </li>)}
+          {this.state.data.born}
         </ul>
       </div>
     )
   }
 }
+
+export default Tyrell;
