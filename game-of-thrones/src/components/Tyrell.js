@@ -15,14 +15,14 @@ import axios from 'axios'
     
     axios.get("http://anapioficeandfire.com/api/characters/16")
     .then(res => {
-      const Tyrell = res.data;
-      console.log("data ---->", Tyrell)
+      const bTyrell = res.data;
+      console.log("data ---->", bTyrell)
       
-      this.setState({data: Tyrell})
+      this.setState({data: bTyrell})
 
     })
     .catch(error => {
-      console.log('there is an eror', error)
+      console.log('there is an error', error)
     })
 
   }
